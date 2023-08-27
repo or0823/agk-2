@@ -9,7 +9,8 @@
     }
     .main {
         display:block;
-        justify-content: space-around;
+        margin: 0 auto;
+        justify-content: center;
     }
 form {
     width:100%;
@@ -28,12 +29,17 @@ textarea {
     padding: 10px;
         margin-bottom: 10px;
 }
+    #bcopy{
+    width: 100%;
+    padding: 10px;
+        margin-bottom: 10px;
+}
 iframe {
     width:100%;
     margin: 0 auto;
     height:720px;
-    margin: 0 auto;
-    padding-top:32px
+    padding-top:32px;
+    border: none;
 }
     #log {
         width:100%;
@@ -51,10 +57,16 @@ iframe {
 
 console.log = function(message) {
     console.olog(message);
-    document.getElementById('log').innerHTML += ('<p>' + message + '</p>');
+    //document.getElementById('log').innerHTML += ('<p>' + message + '</p>');
 };
 console.error = console.debug = console.info =  console.log;
 
+document.getElementById("bcopy").onclick = function(){
+    document.getElementById("textcode").select();
+    document.execCommand('copy');
+}
+
+        
         function makeDocument() {
             let frame = document.getElementById("theFrame");
 
@@ -265,8 +277,11 @@ console.error = console.debug = console.info =  console.log;
         <label for="link">Link:</label><br>
         <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
         <input type="submit" value="Submit">
-    </form> 
-    <textarea id="textcode" rows="15" cols="60"></textarea>
+    </form>
+    <form>    
+        <textarea id="textcode" rows="15" cols="60"></textarea>
+        <button id="bcopy">Copy</button>
+    </form>
     <iframe id="theFrame" src="about:blank"></iframe>
     <div id="log"></div>
 </div>
