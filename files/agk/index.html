@@ -57,7 +57,7 @@ iframe {
 
 console.log = function(message) {
     console.olog(message);
-    //document.getElementById('log').innerHTML += ('<p>' + message + '</p>');
+    document.getElementById('log').innerHTML += ('<p>' + message + '</p>');
 };
 console.error = console.debug = console.info =  console.log;
 
@@ -254,7 +254,7 @@ function copyCode(){
             let textcode = document.getElementById("textcode");            
             let codeFrame = document.getElementById("theFrame").contentDocument.documentElement.outerHTML;
             textcode.innerHTML = '<!DOCTYPE html>'+codeFrame;
-            console.log(textcode.innerHTML);
+            
         }
   </script>
 </head>
