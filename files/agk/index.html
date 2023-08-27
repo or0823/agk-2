@@ -239,9 +239,10 @@ console.error = console.debug = console.info =  console.log;
 
             // Copy the new HTML document into thetextarea
 
-            let textcode = document.getElementById("textcode");
-            textcode.innerHTML = '<!DOCTYPE html>';
-            textcode.innerHTML += document.getElementById("theFrame").contentDocument.documentElement.outerHTML;
+            let textcode = document.getElementById("textcode");            
+            let codeFrame = document.getElementById("theFrame").contentDocument.documentElement.outerHTML;
+            textcode.innerHTML = '<!DOCTYPE html>'+codeFrame;
+            console.log(textcode.innerHTML);
         }
   </script>
 </head>
