@@ -33,8 +33,25 @@ iframe {
     margin: 0 auto;
     padding-top:32px
 }
+    #log {
+        width:100%;
+        height:auto;
+        padding:15px
+    }
 </style>
     <script>
+(function () {
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function (message) {
+        if (typeof message == 'object') {
+            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<hr />';
+        } else {
+            logger.innerHTML += message + '<hr />';
+        }
+    }
+})();
+        
         function makeDocument() {
             let frame = document.getElementById("theFrame");
 
@@ -245,9 +262,9 @@ iframe {
         <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
         <input type="submit" value="Submit">
     </form> 
-    <iframe id="theFrame" src="about:blank"></iframe>
-
     <textarea id="textcode" rows="15" cols="60"></textarea>
+    <iframe id="theFrame" src="about:blank"></iframe>
+    <div id="log"></div>
 </div>
 </body>
 
