@@ -219,9 +219,9 @@ iframe {
 
             // Copy the new HTML document into thetextarea
 
-            let textcode = document.getElementById("textcode").value;
-            textcode = '<!DOCTYPE html>';
-            textcode += doc.contentDocument.documentElement.outerHTML;
+            let textcode = document.getElementById("textcode");
+            textcode.innerHTML = '<!DOCTYPE html>';
+            textcode.innerHTML += document.getElementById("theFrame").contentDocument.documentElement.outerHTML;
         }
   </script>
 </head>
