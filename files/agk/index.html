@@ -221,9 +221,9 @@ iframe {
 
             let textcode = document.getElementById("textcode").value;
             textcode = '<!DOCTYPE html>';
-            textcode += doc.documentElement;
+            textcode += doc.contentDocument.documentElement.outerHTML;
         }
-    </script>
+  </script>
 </head>
 
 <body>
