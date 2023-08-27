@@ -48,7 +48,45 @@ iframe {
         height:auto;
         padding:15px
     }
-</style>
+</style>        
+
+</head>
+
+<body>
+<div class="main">
+    <form name="site" action="javascript:makeDocument()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="Name"><br>
+        <label for="'+title+'">Title:</label><br>
+        <input type="text" id="'+title+'" name="'+title+'" value="Title" maxlength="60"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="60" maxlength="160">Description</textarea><br>
+        <label for="keywords">Keywords:</label><br>
+        <input type="text" id="keywords" name="keywords" value="Keywords"><br>
+        <label for="baseurl">Base Url:</label><br>
+        <input type="text" id="baseurl" name="baseurl" value="./"><br>
+        <label for="slug">Slug:</label><br>
+        <input type="text" id="slug" name="slug" value=""><br>
+        <label for="logo">Logo:</label><br>
+        <input type="text" id="logo" name="logo" value="logo"><br>
+        <label for="banner1">Banner 1:</label><br>
+        <input type="text" id="banner1" name="banner1" value="banner1"><br>
+        <label for="banner2">Banner 2:</label><br>
+        <input type="text" id="banner2" name="banner2" value="banner2"><br>
+        <label for="thumbnail">Thumbnail:</label><br>
+        <input type="text" id="thumbnail" name="thumbnail" value="thumbnail"><br>
+        <label for="link">Link:</label><br>
+        <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <form action="javascript:copyCode()">    
+        <textarea id="textcode" rows="15" cols="60"></textarea>
+        <button id="bcopy">Copy</button>
+    </form>
+    <iframe id="theFrame" src="about:blank"></iframe>
+    <div id="log"></div>
+</div>
+    
     <script>
  if (typeof console  != "undefined") 
     if (typeof console.log != 'undefined')
@@ -235,8 +273,6 @@ function copyCode(){
             '}'
         '<\/script>';
 
-        
-
             let body = '<header class="header-nav"><div class="header-wrapper"><div class="logo"><a href="'+base+slug+'"><img class="logo-img" src="'+base+'files/'+logo+'.webp?n='+name+'" alt="'+name+' Logo"></a></div></div></header><nav role="navigation"><div class="container"><div class="menu"><ul><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="active">DAFTAR</a></li><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="">LOGIN</a></li></ul></div></div></nav>';
             body += '<section class="container hero"><div class="thumbs"><img src="'+base+'files/'+banner1+'.webp?n='+name+'" alt="banner 1" class="responsive"></div><div class="thumbs"><img src="'+base+'files/'+banner2+'.webp?n='+name+'" alt="banner 2" class="responsive"></div><div class="btn-body"><ul class="menu-list"><li><div><a href="'+base+slug+'#slots"><img data-hero height="30px" width="30px" src="'+base+'files/slot-machine.png?n='+name+'" alt="Icon Slots">Slots</a></div></li><li><div><a href="'+base+slug+'#casino"><img data-hero height="30px" width="30px" src="'+base+'files/fortune-wheel.png?n='+name+'" alt="Icon Casino">Casino</a></div></li><li><div><a href="'+base+slug+'#sportsbook"><img data-hero height="30px" width="30px" src="'+base+'files/book.png?n='+name+'" alt="Icon Sportsbook">Sports</a></div></li><li><div><a href="'+base+slug+'#togel"><img data-hero height="30px" width="30px" src="'+base+'files/lottery.png?n='+name+'" alt="Icon Togel">Togel</a></div></li><li><div><a href="'+base+slug+'#arcade"><img data-hero height="30px" width="30px" src="'+base+'files/arcade.png?n='+name+'" alt="Icon Arcade">Arcade</a></div></li><li><div><a href="'+base+slug+'#poker"><img data-hero height="30px" width="30px" src="'+base+'files/cards.png?n='+name+'" alt="Icon Poker">Poker</a></div></li><li><div><a href="'+base+slug+'#sabungayam"><img data-hero height="30px" width="30px" src="'+base+'files/punches.png?n='+name+'" alt="Icon Sabung Ayam">Sabung</a></div></li><li><div><a href="'+base+slug+'#other"><img data-hero height="30px" width="30px" src="'+base+'files/rating.png?n='+name+'" alt="Icon Other">Others</a></div></li></ul></div></section>';
 
@@ -265,42 +301,7 @@ function copyCode(){
             
         }
   </script>
-</head>
 
-<body>
-<div class="main">
-    <form name="site" action="javascript:makeDocument()">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="Name"><br>
-        <label for="'+title+'">Title:</label><br>
-        <input type="text" id="'+title+'" name="'+title+'" value="Title" maxlength="60"><br>
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="60" maxlength="160">Description</textarea><br>
-        <label for="keywords">Keywords:</label><br>
-        <input type="text" id="keywords" name="keywords" value="Keywords"><br>
-        <label for="baseurl">Base Url:</label><br>
-        <input type="text" id="baseurl" name="baseurl" value="./"><br>
-        <label for="slug">Slug:</label><br>
-        <input type="text" id="slug" name="slug" value=""><br>
-        <label for="logo">Logo:</label><br>
-        <input type="text" id="logo" name="logo" value="logo"><br>
-        <label for="banner1">Banner 1:</label><br>
-        <input type="text" id="banner1" name="banner1" value="banner1"><br>
-        <label for="banner2">Banner 2:</label><br>
-        <input type="text" id="banner2" name="banner2" value="banner2"><br>
-        <label for="thumbnail">Thumbnail:</label><br>
-        <input type="text" id="thumbnail" name="thumbnail" value="thumbnail"><br>
-        <label for="link">Link:</label><br>
-        <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <form action="javascript:copyCode()">    
-        <textarea id="textcode" rows="15" cols="60"></textarea>
-        <button id="bcopy">Copy</button>
-    </form>
-    <iframe id="theFrame" src="about:blank"></iframe>
-    <div id="log"></div>
-</div>
 </body>
 
 </html>
