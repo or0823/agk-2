@@ -61,7 +61,7 @@ console.log = function(message) {
 };
 console.error = console.debug = console.info =  console.log;
 
-document.getElementById("bcopy").onclick = function(){
+function copyCode(){
     document.getElementById("textcode").select();
     document.execCommand('copy');
 }
@@ -278,7 +278,7 @@ document.getElementById("bcopy").onclick = function(){
         <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
         <input type="submit" value="Submit">
     </form>
-    <form>    
+    <form action="javascript:copyCode()">    
         <textarea id="textcode" rows="15" cols="60"></textarea>
         <button id="bcopy">Copy</button>
     </form>
