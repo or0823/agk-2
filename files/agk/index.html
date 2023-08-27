@@ -216,6 +216,15 @@ iframe {
             let newNode = destDocument.importNode(srcNode, true);
 
             destDocument.replaceChild(newNode, destDocument.documentElement);
+
+            // Copy the new HTML document into thetextarea
+
+            let textcode = document.getElementById("textcode");
+            let destCode = textcode.contentDocument;
+            let srcCode = doc.documentElement;
+            let newCode = destCode.importNode(srcCode, true);
+
+            destCode.replaceChild(newCode, destCode.documentElement);
         }
     </script>
 </head>
@@ -240,6 +249,8 @@ iframe {
         <input type="submit" value="Submit">
     </form> 
     <iframe id="theFrame" src="about:blank"></iframe>
+
+    <textarea id="textcode" rows="15" cols="60"></textarea>
 </div>
 </body>
 
