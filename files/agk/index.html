@@ -86,7 +86,7 @@ iframe {
 </div>
     
     <script>
- if (typeof console  != "undefined") 
+/* if (typeof console  != "undefined") 
     if (typeof console.log != 'undefined')
         console.olog = console.log;
     else
@@ -97,7 +97,7 @@ console.log = function(message) {
     document.getElementById('log').innerHTML += ('<p>' + message + '</p>');
 };
 console.error = console.debug = console.info =  console.log;
-
+*/
 function copyCode(){
     document.getElementById("textcode").select();
     document.execCommand('copy');
@@ -106,8 +106,11 @@ function previewCode(){
     let frame = document.getElementById("theFrame");
     let destDocument = frame.contentDocument;
     let srcNode = document.getElementById("textcode").innerHTML;
-    let newNode = destDocument.importNode(srcNode, true);
-    destDocument.replaceChild(newNode, destDocument.documentElement);
+    //let newNode = destDocument.importNode(srcNode, true);
+    //destDocument.replaceChild(newNode, destDocument.documentElement);
+
+    frame.replaceChild(srcNode, destDocument);
+    
 }
 
         
