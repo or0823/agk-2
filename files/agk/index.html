@@ -104,12 +104,8 @@ function copyCode(){
 }
 function previewCode(){
     let frame = document.getElementById("theFrame");
-    let destDocument = frame.contentDocument;
-    let srcNode = document.getElementById("textcode").innerHTML;
-    //let newNode = destDocument.importNode(srcNode, true);
-    //destDocument.replaceChild(newNode, destDocument.documentElement);
-
-    frame.replaceChild(srcNode, destDocument);
+    let srcDoc = document.getElementById("textcode").value;
+    frame.srcdoc= srcDoc;
     
 }
 
