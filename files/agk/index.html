@@ -81,9 +81,10 @@ iframe {
         <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
         <input type="submit" value="Submit">
     </form>
-    <form action="javascript:copyCode()">    
+    <form action="#">    
         <textarea id="textcode" rows="15" cols="60"></textarea>
-        <button id="bcopy">Copy</button>
+        <button id="bcopy" type="submit" formaction="javascript:copyCode()">Copy</button>        
+        <button id="bpreview" type="submit" formaction="javascript:previewCode()">Preview</button>
     </form>
     <iframe id="theFrame" src="about:blank"></iframe>
     <div id="log"></div>
@@ -105,6 +106,13 @@ console.error = console.debug = console.info =  console.log;
 function copyCode(){
     document.getElementById("textcode").select();
     document.execCommand('copy');
+}
+function previewCode(){
+    let frame = document.getElementById("theFrame");
+    let destDocument = frame.contentDocument;
+    let srcNode = document.getElementById("textcode").innerHTML;
+    let newNode = destDocument.importNode(srcNode, true);
+    destDocument.replaceChild(newNode, destDocument.documentElement);
 }
 
         
