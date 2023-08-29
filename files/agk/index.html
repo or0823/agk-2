@@ -301,6 +301,14 @@ iframe {
         box-shadow: var(--box-shadow);
         min-height: 200px;
     }
+    p.excerp img {
+        float: left;
+        width: 200px;
+        height: auto;
+        border-radius: 5px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
 
     article footer p.lastmod {
         color: #bbb;
@@ -725,7 +733,7 @@ function previewCode(){
                 +'<li><div><a href="'+base+slug+'#promo"><img data-hero height="30px" width="30px" src="'+files+'promo.png?n='+name+'" alt="Icon Promo">Promo</a></div></li></ul></div></section>';
 
             body += '<main><article>'
-				+'<header><nav id="breadcumb"><a href="'+base+slug+'#website">Beranda</a> > <a href="'+base+slug+'#webpage">'+name+'</a> </nav><h1>'+h1title+'</h1><p class="excerp"><img class="thumbnail" src="'+files+thumbnail+'.webp" width=200 height=200>'+excerp+'</p></header>'
+				+'<header><nav id="breadcumb"><a href="'+base+slug+'#website">Beranda</a> > <a href="'+base+slug+'#webpage">'+name+'</a> </nav><h1>'+h1title+'</h1><p class="excerp"><img class="thumbnail" src="'+files+thumbnail+'.webp" width=200 height=200 alt="'+name+'" title="'+name+'">'+excerp+'</p></header>'
 				+'<section aria-labelledby=""><h2 id=""></h2></section>'
 				+'<footer><p class="lastmod">Halaman ini terakhir diubah pada <time dateTime="'+datenow+'">' + tanggal + ' ' + bulan + ' ' + tahun +'</time> oleh <a href="'+base+slug+'#organization">'+name+'</a></p></footer>'
 			    +'</article></main>'
