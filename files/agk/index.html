@@ -70,6 +70,7 @@ iframe {
 <div class="main">
     <div>
         <form name="site" action="javascript:makeDocument()">
+            <hr><strong>SEO</strong><hr>
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" value="Name"><br>
             <label for="title">Title:</label><br>
@@ -77,21 +78,24 @@ iframe {
             <label for="description">Description:</label><br>
             <textarea id="description" name="description" rows="4" cols="60" maxlength="160">Description</textarea><br>
             <label for="keywords">Keywords:</label><br>
-            <input type="text" id="keywords" name="keywords" value="Keywords"><br>
+            <input type="text" id="keywords" name="keywords" value="Keywords">
+            <hr><strong>URL</strong><hr>
             <label for="baseurl">Base Url:</label><br>
             <input type="text" id="baseurl" name="baseurl" value="https://main.refreshless.com/"><br>
             <label for="slug">Slug:</label><br>
             <input type="text" id="slug" name="slug" value=""><br>
             <label for="files">Base Files:</label><br>
             <input type="text" id="files" name="files" value="https://main.refreshless.com/files/"><br>
+            <label for="link">Link:</label><br>
+            <input type="text" id="link" name="link" value="https://bit.ly/hunterkw">
+            <hr><strong>LOGO</strong><hr>
             <label for="logo">Logo:</label><br>
             <input type="text" id="logo" name="logo" value="logo"><br>
             <label for="banner1">Banner 1:</label><br>
             <input type="text" id="banner1" name="banner1" value="banner1"><br>
             <label for="banner2">Banner 2:</label><br>
-            <input type="text" id="banner2" name="banner2" value="banner2"><br>
-            <label for="thumbnail">Thumbnail:</label><br>
-            <input type="text" id="thumbnail" name="thumbnail" value="thumbnail"><br>
+            <input type="text" id="banner2" name="banner2" value="banner2">
+            <hr><strong>STYLE</strong><hr>
             <label for="style">Style:</label><br>
             <textarea id="style" name="style" rows="10" cols="60"><style amp-custom="">
     html {
@@ -456,9 +460,14 @@ iframe {
         }
     }
 </style>
-        </textarea><br>
-            <label for="link">Link:</label><br>
-            <input type="text" id="link" name="link" value="https://bit.ly/hunterkw"><br><br>
+        </textarea>
+        <hr><strong>ARTIKEL</strong><hr>
+        <label for="h1title">Judul Artikel:</label><br>
+        <input type="text" id="h1title" name="h1title" value="Judul Artikel" maxlength="60"><br>
+        <label for="excerp">Kutipan:</label><br>
+        <textarea id="excerp" name="excerp" rows="5" cols="60" maxlength="250">Description</textarea><br>
+        <label for="thumbnail">Thumbnail:</label><br>
+        <input type="text" id="thumbnail" name="thumbnail" value="thumbnail"><br>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -509,12 +518,14 @@ function previewCode(){
             let base = site["baseurl"].value;
             let slug = site["slug"].value;
             let files = site["files"].value;
+            let link = site["link"].value;
             let logo = site["logo"].value;
             let banner1 = site["banner1"].value;
             let banner2 = site["banner2"].value;
-            let thumbnail = site["thumbnail"].value;
             let style = site["style"].value;
-            let link = site["link"].value;
+            let h1title = site["h1title"].value;
+            let excerp = site["excerp"].value;
+            let thumbnail = site["thumbnail"].value;
 
 
             let datenow = new Date().toISOString().substring(0, 19)+"+07:00";
@@ -633,23 +644,27 @@ function previewCode(){
                     '"itemListElement": [{'+
                         '"@type": "ListItem",'+
                         '"position": "1",'+
-                        '"item": {"@id": "'+base+slug+'#listItem1",'+
-                        '"name": "Home",'+
-                        '"item": "'+base+slug+'"'+
+                        '"item": {'+
+                            '"@type": "Website",'+
+                            '"@id": "'+base+slug+'#website",'+
+                            '"name": "'+name+'"'+
                     '}},{'+
                         '"@type": "ListItem",'+
                         '"position": "2",'+
-                        '"item" : {"@id": "'+base+slug+'#listItem2",'+
-                        '"name": "'+name+'",'+
-                        '"item": "'+base+slug+'"'+
+                        '"item" : {'+
+                            '"@type": "WebPage",'+
+                            '"@id": "'+base+slug+'#webpage",'+
+                            '"name": "'+name+'"'+
                     '}},{'+
                         '"@type": "ListItem",'+
                         '"position": "3",'+
-                        '"item" : {"@id": "'+base+slug+'#listItem3",'+
-                        '"name": "'+title+'"'+
+                        '"item" : {'+
+                            '"@type": "WebPage",'+
+                            '"@id": "'+base+slug+'#webpage",'+
+                            '"name": "'+title+'"'+
                     '}}]'+
                 '}, {'+
-                    '"@type": "webpage",'+
+                    '"@type": "WebPage",'+
                     '"@id": "'+base+slug+'#webpage",'+
                     '"url": "'+base+slug+'",'+
                     '"name": "'+title+'",'+
@@ -699,7 +714,7 @@ function previewCode(){
                 +'<li><div><a href="'+base+slug+'#promo"><img data-hero height="30px" width="30px" src="'+files+'promo.png?n='+name+'" alt="Icon Promo">Promo</a></div></li></ul></div></section>';
 
             body += '<main><article>'
-				+'<header><h1>Link RTP Slot Gacor Pragmatic Tertinggi Hari Ini</h1><p><a href="https://bit.ly/hunterkw?utm_campaign=Name&amp;utm_medium=search&amp;utm_source=Name">RTP LIVE</a>adalah singkatan dari Return To Player Slot bermakna tiap-tiap slot gacor bakal dikembalikan menjadi kemenangan yang kemungkinan diraih oleh para pemain. Sehingga presentasi terhadap website RTP Live menjadi cukup populer di kalangan penduduk sebab begitu banyak pemain terlalu terbantu didalam raih keuntungan memanfaatkan RTP live slot gacor. Sehingga jumlah kekalahan bakal terlalu sedikit dialami oleh pemain dan kemenangan bakal teroptimalkan lebih baik.</p></header>'
+				+'<header><nav id="breadcumb"><a href="'+base+slug+'">Beranda</a> > <a href="'+base+slug+'">'+name+'</a> </nav><h1>'+h1title+'</h1><p><a href="https://bit.ly/hunterkw?utm_campaign=Name&amp;utm_medium=search&amp;utm_source=Name">#name#</a> adalah singkatan dari Return To Player Slot bermakna tiap-tiap slot gacor bakal dikembalikan menjadi kemenangan yang kemungkinan diraih oleh para pemain. Sehingga presentasi terhadap website RTP Live menjadi cukup populer di kalangan penduduk sebab begitu banyak pemain terlalu terbantu didalam raih keuntungan memanfaatkan RTP live slot gacor. Sehingga jumlah kekalahan bakal terlalu sedikit dialami oleh pemain dan kemenangan bakal teroptimalkan lebih baik.</p></header>'
 				+'<section aria-labelledby=""><h2 id=""></h2></section>'
 				+'<footer><p class="lastmod">Halaman ini terakhir diubah pada <time dateTime="'+datenow+'">' + tanggal + ' ' + bulan + ' ' + tahun +'</time> oleh <a href="'+base+slug+'#organization">'+name+'</a></p></footer>'
 			    +'</article></main>'
