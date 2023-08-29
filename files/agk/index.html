@@ -153,7 +153,18 @@ function previewCode(){
             let thumbnail = site["thumbnail"].value;
             let style = site["style"].value;
             let link = site["link"].value;
+
+
             let datenow = new Date().toISOString().substring(0, 19)+"+07:00";
+            let hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+            let bulan = ['Januari', 'Februari', 'Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+            let tanggal = new Date(datenow).getDate();
+            let xhari = new Date(datenow).getDay();
+            let xbulan = new Date(datenow).getMonth();
+            let xtahun = new Date(datenow).getYear();
+            hari = hari[xhari];
+            bulan = bulan[xbulan];
+            tahun = (xtahun < 1000)?xtahun + 1900 : xtahun;
             
             let doc = document.implementation.createHTMLDocument(title);
             doc. documentElement. setAttribute("lang", 'id-ID');
@@ -328,9 +339,9 @@ function previewCode(){
             body += '<main><article>'
 				+'<header><h1>Link RTP Slot Gacor Pragmatic Tertinggi Hari Ini</h1><p><a href="https://bit.ly/hunterkw?utm_campaign=Name&amp;utm_medium=search&amp;utm_source=Name">RTP LIVE</a>adalah singkatan dari Return To Player Slot bermakna tiap-tiap slot gacor bakal dikembalikan menjadi kemenangan yang kemungkinan diraih oleh para pemain. Sehingga presentasi terhadap website RTP Live menjadi cukup populer di kalangan penduduk sebab begitu banyak pemain terlalu terbantu didalam raih keuntungan memanfaatkan RTP live slot gacor. Sehingga jumlah kekalahan bakal terlalu sedikit dialami oleh pemain dan kemenangan bakal teroptimalkan lebih baik.</p></header>'
 				+'<section aria-labelledby=""><h2 id=""></h2></section>'
-				+'<footer><p><time dateTime=""></time>, <a href="">Judul</a> oleh <a href="">Name</a></p></footer>'
+				+'<footer><p><time dateTime="'+datenow+'">'+ hari +', ' + tanggal + ' ' + bulan + ' ' + tahun +'</time>, <a href="'+base+'">'+title+'</a> oleh <a href="'+base+'">'+name+'</a></p></footer>'
 			    +'</article></main>'
-		        +'<footer class="text-center">&copy; Name 2023.</footer>';
+		        +'<footer class="text-center">&copy; '+name+' 2023.</footer>';
             
             try {
                 doc.head.innerHTML+=head;
