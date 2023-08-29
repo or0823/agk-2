@@ -11,6 +11,8 @@
     .main {
         display:grid;
         grid-gap: 30px;
+        grid-template: column;
+        grid-template-columns: repeat(2, 450px);
         margin: 0 auto;
         justify-content: center;
         padding: 15px;
@@ -51,7 +53,7 @@ iframe {
 
 <body>
 <div class="main">
-    <div class="dform">
+    <div>
         <form name="site" action="javascript:makeDocument()">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" value="Name"><br>
@@ -88,7 +90,9 @@ iframe {
             <button id="bpreview" type="submit" formaction="javascript:previewCode()">Preview</button>
         </form>
     </div>
-    <iframe id="theFrame" src="about:blank"></iframe>
+    <div>
+        <iframe id="theFrame" src="about:blank"></iframe>
+    </div>
     <div id="log"></div>
 </div>
     
