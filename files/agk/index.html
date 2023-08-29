@@ -78,11 +78,11 @@ iframe {
             <label for="keywords">Keywords:</label><br>
             <input type="text" id="keywords" name="keywords" value="Keywords"><br>
             <label for="baseurl">Base Url:</label><br>
-            <input type="text" id="baseurl" name="baseurl" value="./"><br>
+            <input type="text" id="baseurl" name="baseurl" value="https://main.refreshless.com/"><br>
             <label for="slug">Slug:</label><br>
             <input type="text" id="slug" name="slug" value=""><br>
-            <label for="files">Files:</label><br>
-            <input type="text" id="files" name="files" value="files/"><br>
+            <label for="files">Base Files:</label><br>
+            <input type="text" id="files" name="files" value="https://main.refreshless.com/files/"><br>
             <label for="logo">Logo:</label><br>
             <input type="text" id="logo" name="logo" value="logo"><br>
             <label for="banner1">Banner 1:</label><br>
@@ -178,46 +178,46 @@ function previewCode(){
             head += '<meta property="og:description" content="'+description+'">';
             head += '<meta property="og:url" content="'+base+slug+'">';
             head += '<meta property="og:site_name" content="'+name+'">';
-            head += '<meta property="og:image" content="'+base+files+'slot-gacor-hari-ini-banner.webp?n='+name+'">';
-            head += '<meta property="thumbnail" content="'+base+files+'slot-gacor-icon.webp?n='+name+'">';
+            head += '<meta property="og:image" content="'+files+'slot-gacor-hari-ini-banner.webp?n='+name+'">';
+            head += '<meta property="thumbnail" content="'+files+'slot-gacor-icon.webp?n='+name+'">';
             head += '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">';
             head += '<link rel="canonical" itemprop="mainEntityOfPage" href="'+base+slug+'">';
             head += '<link rel="amphtml" href="'+base+slug+'">';
-            head += '<link rel="apple-touch-icon" sizes="180x180" href="'+base+files+'apple-touch-icon.png?n='+name+'">';
-            head += '<link rel="icon" type="image/png?n='+name+'" sizes="32x32" href="'+base+files+'favicon-32x32.png?n='+name+'">';
-            head += '<link rel="icon" type="image/png?n='+name+'" sizes="194x194" href="'+base+files+'favicon-194x194.png?n='+name+'">';
-            head += '<link rel="icon" type="image/png?n='+name+'" sizes="192x192" href="'+base+files+'android-chrome-192x192.png?n='+name+'">';
-            head += '<link rel="icon" type="image/png?n='+name+'" sizes="16x16" href="'+base+files+'favicon-16x16.png?n='+name+'">';
-            head += '<link rel="manifest" href="'+base+files+'site.webmanifest">';
-            head += '<link rel="mask-icon" href="'+base+files+'safari-pinned-tab.svg" color="#990000">';
-            head += '<link rel="shortcut icon" href="'+base+files+'favicon.ico">';
+            head += '<link rel="apple-touch-icon" sizes="180x180" href="'+files+'apple-touch-icon.png?n='+name+'">';
+            head += '<link rel="icon" type="image/png?n='+name+'" sizes="32x32" href="'+files+'favicon-32x32.png?n='+name+'">';
+            head += '<link rel="icon" type="image/png?n='+name+'" sizes="194x194" href="'+files+'favicon-194x194.png?n='+name+'">';
+            head += '<link rel="icon" type="image/png?n='+name+'" sizes="192x192" href="'+files+'android-chrome-192x192.png?n='+name+'">';
+            head += '<link rel="icon" type="image/png?n='+name+'" sizes="16x16" href="'+files+'favicon-16x16.png?n='+name+'">';
+            head += '<link rel="manifest" href="'+files+'site.webmanifest">';
+            head += '<link rel="mask-icon" href="'+files+'safari-pinned-tab.svg" color="#990000">';
+            head += '<link rel="shortcut icon" href="'+files+'favicon.ico">';
             head += '<meta name="apple-mobile-web-app-title" content="'+name+'">';
             head += '<meta name="application-name" content="'+name+'">';
             head += '<meta name="msapplication-TileColor" content="#770000">';
-            head += '<meta name="msapplication-TileImage" content="'+base+files+'mstile-144x144.png?n='+name+'">';
-            head += '<meta name="msapplication-config" content="'+base+files+'browserconfig.xml">';
+            head += '<meta name="msapplication-TileImage" content="'+files+'mstile-144x144.png?n='+name+'">';
+            head += '<meta name="msapplication-config" content="'+files+'browserconfig.xml">';
             head += '<meta name="theme-color" content="#770000">';
             head += '<link rel="preconnect dns-prefetch" href="'+base+'" crossorigin>';
             head += '<link rel="preconnect dns-prefetch" href="https://use.fontawesome.com/" crossorigin>';
             head += '<link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/" crossorigin>';
             head += '<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>';
             head += '<link rel="preconnect dns-prefetch" href="https://cdn.ampproject.org/" crossorigin>';
-            head += '<link rel="preload" as="image" href="'+base+files+logo+'.webp?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+thumbnail+'.webp?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+banner1+'.webp?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+banner2+'.webp?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'home.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'slot.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'livecasino.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'sport.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'togel.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'arcade.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'table.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'fishing.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'cockfight.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'promo.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'register.png?n='+name+'">';
-            head += '<link rel="preload" as="image" href="'+base+files+'login.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+logo+'.webp?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+thumbnail+'.webp?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+banner1+'.webp?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+banner2+'.webp?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'home.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'slot.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'livecasino.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'sport.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'togel.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'arcade.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'table.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'fishing.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'cockfight.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'promo.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'register.png?n='+name+'">';
+            head += '<link rel="preload" as="image" href="'+files+'login.png?n='+name+'">';
             head += '<link rel="preload" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" as="style">';
             head += '<link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito%3Aregular%2Citalic%2C600%2C700%2C700italic%2C800%2C900&#038;display=swap" as="style">';
             head += '<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">';
@@ -235,7 +235,7 @@ function previewCode(){
                     '"name": "'+name+'",'+
                     '"alternateName": "'+name+'",'+
                     '"url": "'+base+slug+'",'+
-                    '"logo": "'+base+files+'slot-gacor-icon.webp?n='+name+'"'+
+                    '"logo": "'+files+'slot-gacor-icon.webp?n='+name+'"'+
                 '}, {'+
                     '"@type": "Organization",'+
                     '"@id": "'+base+slug+'#organization",'+
@@ -296,7 +296,7 @@ function previewCode(){
                     '},'+
                     '"headline": "'+title+'",'+
                     '"description": "'+description+'",'+
-                    '"image": "'+base+files+'slot-gacor-icon.webp?n='+name+'",'+
+                    '"image": "'+files+'slot-gacor-icon.webp?n='+name+'",'+
                     '"datePublished": "'+datenow+'",'+
                     '"dateModified": "'+datenow+'",'+
                     '"author": {'+
@@ -309,20 +309,20 @@ function previewCode(){
             '}'
         '<\/script>';
 
-            let body = '<header class="header-nav"><div class="header-wrapper"><div class="logo"><a href="'+base+slug+'"><img class="logo-img" src="'+base+files+logo+'.webp?n='+name+'" alt="'+name+' Logo"></a></div></div></header>'
-                +'<nav role="navigation"><div class="container"><div class="menu"><ul><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="active"><span><img data-hero height="24px" width="24px" src="'+base+files+'register.png?n='+name+'" alt="Icon Register"></span>DAFTAR</a></li><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class=""><span><img data-hero height="30px" width="30px" src="'+base+files+'login.png?n='+name+'" alt="Icon Login"></span>LOGIN</a></li></ul></div></div></nav>';
-            body += '<section class="container hero"><div class="thumbs"><img src="'+base+files+banner1+'.webp?n='+name+'" alt="banner 1" class="responsive"></div><div class="thumbs"><img src="'+base+files+banner2+'.webp?n='+name+'" alt="banner 2" class="responsive"></div>';
+            let body = '<header class="header-nav"><div class="header-wrapper"><div class="logo"><a href="'+base+slug+'"><img class="logo-img" src="'+files+logo+'.webp?n='+name+'" alt="'+name+' Logo"></a></div></div></header>'
+                +'<nav role="navigation"><div class="container"><div class="menu"><ul><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="active"><span><img data-hero height="24px" width="24px" src="'+files+'register.png?n='+name+'" alt="Icon Register"></span>DAFTAR</a></li><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class=""><span><img data-hero height="30px" width="30px" src="'+files+'login.png?n='+name+'" alt="Icon Login"></span>LOGIN</a></li></ul></div></div></nav>';
+            body += '<section class="container hero"><div class="thumbs"><img src="'+files+banner1+'.webp?n='+name+'" alt="banner 1" class="responsive"></div><div class="thumbs"><img src="'+files+banner2+'.webp?n='+name+'" alt="banner 2" class="responsive"></div>';
             body += '<div class="btn-body"><ul class="menu-list">'
-                +'<li><div><a href="'+base+slug+'"><img data-hero height="30px" width="30px" src="'+base+files+'home.png?n='+name+'" alt="Icon Home">Home</a></div></li>'                
-                +'<li><div><a href="'+base+slug+'#slot"><img data-hero height="30px" width="30px" src="'+base+files+'slot.png?n='+name+'" alt="Icon Slot">Slot</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#casino"><img data-hero height="30px" width="30px" src="'+base+files+'livecasino.png?n='+name+'" alt="Icon Casino">Casino</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#sportsbook"><img data-hero height="30px" width="30px" src="'+base+files+'sport.png?n='+name+'" alt="Icon Sportsbook">Sports</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#togel"><img data-hero height="30px" width="30px" src="'+base+files+'togel.png?n='+name+'" alt="Icon Togel">Togel</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#arcade"><img data-hero height="30px" width="30px" src="'+base+files+'arcade.png?n='+name+'" alt="Icon Arcade">Arcade</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#poker"><img data-hero height="30px" width="30px" src="'+base+files+'table.png?n='+name+'" alt="Icon Poker">Poker</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#fishing"><img data-hero height="30px" width="30px" src="'+base+files+'fishing.png?n='+name+'" alt="Icon Fishing">Fishing</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#sabungayam"><img data-hero height="30px" width="30px" src="'+base+files+'cockfight.png?n='+name+'" alt="Icon Sabung Ayam">Sabung</a></div></li>'
-                +'<li><div><a href="'+base+slug+'#promo"><img data-hero height="30px" width="30px" src="'+base+files+'promo.png?n='+name+'" alt="Icon Promo">Promo</a></div></li></ul></div></section>';
+                +'<li><div><a href="'+base+slug+'"><img data-hero height="30px" width="30px" src="'+files+'home.png?n='+name+'" alt="Icon Home">Home</a></div></li>'                
+                +'<li><div><a href="'+base+slug+'#slot"><img data-hero height="30px" width="30px" src="'+files+'slot.png?n='+name+'" alt="Icon Slot">Slot</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#casino"><img data-hero height="30px" width="30px" src="'+files+'livecasino.png?n='+name+'" alt="Icon Casino">Casino</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#sportsbook"><img data-hero height="30px" width="30px" src="'+files+'sport.png?n='+name+'" alt="Icon Sportsbook">Sports</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#togel"><img data-hero height="30px" width="30px" src="'+files+'togel.png?n='+name+'" alt="Icon Togel">Togel</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#arcade"><img data-hero height="30px" width="30px" src="'+files+'arcade.png?n='+name+'" alt="Icon Arcade">Arcade</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#poker"><img data-hero height="30px" width="30px" src="'+files+'table.png?n='+name+'" alt="Icon Poker">Poker</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#fishing"><img data-hero height="30px" width="30px" src="'+files+'fishing.png?n='+name+'" alt="Icon Fishing">Fishing</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#sabungayam"><img data-hero height="30px" width="30px" src="'+files+'cockfight.png?n='+name+'" alt="Icon Sabung Ayam">Sabung</a></div></li>'
+                +'<li><div><a href="'+base+slug+'#promo"><img data-hero height="30px" width="30px" src="'+files+'promo.png?n='+name+'" alt="Icon Promo">Promo</a></div></li></ul></div></section>';
 
             body += '<main><article>'
 				+'<header><h1>Link RTP Slot Gacor Pragmatic Tertinggi Hari Ini</h1><p><a href="https://bit.ly/hunterkw?utm_campaign=Name&amp;utm_medium=search&amp;utm_source=Name">RTP LIVE</a>adalah singkatan dari Return To Player Slot bermakna tiap-tiap slot gacor bakal dikembalikan menjadi kemenangan yang kemungkinan diraih oleh para pemain. Sehingga presentasi terhadap website RTP Live menjadi cukup populer di kalangan penduduk sebab begitu banyak pemain terlalu terbantu didalam raih keuntungan memanfaatkan RTP live slot gacor. Sehingga jumlah kekalahan bakal terlalu sedikit dialami oleh pemain dan kemenangan bakal teroptimalkan lebih baik.</p></header>'
