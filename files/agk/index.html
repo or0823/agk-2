@@ -173,7 +173,7 @@ iframe {
         max-height: 70px
     }
 
-    nav {
+    nav.fixed-nav {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -185,11 +185,11 @@ iframe {
         box-shadow: 0 0 9px 2px hsl(0deg 0% 4% / 48%)
     }
 
-    nav .menu {
+    nav.fixed-nav .menu {
         position: relative
     }
 
-    nav .menu ul {
+    nav.fixed-nav .menu ul {
         padding: 0;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -201,12 +201,12 @@ iframe {
         margin: 0 auto
     }
 
-    nav .menu ul li {
+    nav.fixed-nav .menu ul li {
         color: #fff;
         display: inline-block
     }
 
-    nav .menu ul li a {
+    nav.fixed-nav .menu ul li a {
         width: 100%;
         color: #fff;
         background-color: #a00;
@@ -220,7 +220,7 @@ iframe {
         border-radius: 5px
     }
 
-    nav .menu ul li a span {
+    nav.fixed-nav .menu ul li a span {
         display: flex;
         text-align: center;
         align-items: center;
@@ -234,7 +234,7 @@ iframe {
         border-radius: 5px
     }
 
-    nav .menu ul li a span img {
+    nav.fixed-nav .menu ul li a span img {
         width: 24px;
         height: 24px;
         line-height: 48px;
@@ -242,19 +242,19 @@ iframe {
         vertical-align: middle
     }
 
-    nav .menu ul li a.active:hover,
-    nav .menu ul li a:hover {
+    nav.fixed-nav .menu ul li a.active:hover,
+    nav.fixed-nav .menu ul li a:hover {
         background-color: #700;
         color: #fff;
         animation: none
     }
 
-    nav .menu ul li a.active:hover span,
-    nav .menu ul li a:hover span {
+    nav.fixed-nav .menu ul li a.active:hover span,
+    nav.fixed-nav .menu ul li a:hover span {
         background-color: #c90
     }
 
-    nav .menu ul li a.active {
+    nav.fixed-nav .menu ul li a.active {
         background-color: #fa0;
         color: #fff;
         animation: 1s infinite pulse
@@ -699,7 +699,7 @@ function previewCode(){
         '<\/script>';
 
             let body = '<header class="header-nav"><div class="header-wrapper"><div class="logo"><a href="'+base+slug+'"><img class="logo-img" src="'+files+logo+'.webp?n='+name+'" alt="'+name+' Logo"></a></div></div></header>'
-                +'<nav role="navigation"><div class="container"><div class="menu"><ul><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="active"><span><img data-hero height="24px" width="24px" src="'+files+'register.png?n='+name+'" alt="Icon Register"></span>DAFTAR</a></li><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class=""><span><img data-hero height="30px" width="30px" src="'+files+'login.png?n='+name+'" alt="Icon Login"></span>LOGIN</a></li></ul></div></div></nav>';
+                +'<nav class="fixed-nav" role="navigation"><div class="container"><div class="menu"><ul><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class="active"><span><img data-hero height="24px" width="24px" src="'+files+'register.png?n='+name+'" alt="Icon Register"></span>DAFTAR</a></li><li><a href="'+link+'?utm_campaign='+name+'&amp;utm_medium=search&amp;utm_source='+name+'" target="_blank" rel="nofollow" class=""><span><img data-hero height="30px" width="30px" src="'+files+'login.png?n='+name+'" alt="Icon Login"></span>LOGIN</a></li></ul></div></div></nav>';
             body += '<section class="container hero"><div class="thumbs"><img src="'+files+banner1+'.webp?n='+name+'" alt="banner 1" class="responsive"></div><div class="thumbs"><img src="'+files+banner2+'.webp?n='+name+'" alt="banner 2" class="responsive"></div>';
             body += '<div class="btn-body"><ul class="menu-list">'
                 +'<li><div><a href="'+base+slug+'"><img data-hero height="30px" width="30px" src="'+files+'home.png?n='+name+'" alt="Icon Home">Home</a></div></li>'                
