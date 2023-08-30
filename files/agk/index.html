@@ -311,6 +311,7 @@ iframe {
     .toc-container{
         display: table;
         width: auto;
+        margin:0 auto;
         padding:14px;
         background-color: #400;
         border-radius: 5px;
@@ -321,6 +322,9 @@ iframe {
     #btn_toc svg{vertical-align:middle;height:20px;float:right;margin-left: 10px;}
     #toc li,.back_toc{cursor:pointer}
     :target::before{content:"";display:block;height:48px;visibility:hidden}
+
+    ol { counter-reset: item }
+    li:before { content: counters(item, ".") " "; counter-increment: item }
 
     article footer p.lastmod {
         color: #bbb;
@@ -748,32 +752,23 @@ function previewCode(){
             body += '<main><article>'
                 //HEADER
                 +'<header><nav id="breadcumb"><a href="'+base+slug+'#website">Beranda</a>&nbsp;&#8250;&nbsp;<a href="'+base+slug+'#webpage">'+name+'</a> </nav><h1>'+h1title+'</h1>'
-                //SECTION INFO
-				+'<section>'
-                +'<table class="m-t-normal-s"><tbody>'
-                +'<tr><td>Nama Situs:</td><td>'+name+'</td></tr>'
-                +'<tr><td>Minimal Deposit:</td><td>Rp 10.000,-</td></tr>'
-                +'<tr><td>Minimal Withdraw:</td><td>Rp 50.000,-</td></tr>'
-                +'<tr><td>Metode Deposit:</td><td>Bank, E-Wallet, Pulsa, QRIS</td></tr>'
-                +'<tr><td>Jenis Permainan:</td><td>Slot, Live Casino, Olahraga, Arcade, Poker, E-Sports, Togel</td></tr>'
-                +'</tbody></table>'
-                //+'<div class="back_toc" on="tap:toc.scrollTo(\'position\' = \'center\')" role="button" tabindex="0">Kembali ↑</div>'    
-                +'</section>'
                 //EXCERP
                 +'<p class="excerp"><img class="thumbnail" src="'+files+thumbnail+'.webp" width=200 height=200 alt="'+name+'" title="'+name+'">'+excerp+'</p>'
                 //TOC
                 +'<div class="toc-container"><div id="btn_toc" on="tap:toc.toggleVisibility" role="button" tabindex="0">Daftar Isi: <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="#ffffff" d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg></div>'
                 +'<nav id="toc" hidden>'
                 +'<ol>'
-                +'<li><a href="#perkenalan-tentang-situs-judi-slot-online-resmi">Mengenal Situs Judi Slot Online '+name+' Resmi Terbaik di Indonesia</a></li>'
-                +'<li><a href="#pengertian-jackpot-pada-game-slot-online">Pengertian Jackpot Pada Game Slot Online</a></li>'
-                +'<li><a href="#'+name+'-sebagai-agen-judi-slot-online-gacor-terpercaya">'+name+' Sebagai Agen Judi Slot Online Gacor Terpercaya</a></li>'
-                +'<li><a href="#7-daftar-provider-agen-slot-online-terbaik-di-'+name+'">7 Daftar Provider Agen Slot Online Terbaik Di '+name+'</a></li>'
-                +'<li><a href="#beragam-bonus-pada-permainan-judi-slot-online-gacor">Beragam Bonus Pada Permainan Judi Slot Online Gacor</a></li>'
-                +'<li><a href="#nilai-rtp-bеrреngаruh-pada-permainan-slot-di-'+name+'">Nilai RTP Bеrреngаruh Pada Permainan Slot Di '+name+'</a></li>'
-                +'<li><a href="#faq-pertanyaan-seputar-slot-online">FAQ - Pertanyaan Seputar Slot Online</a></li>'
+                +'<li><a href="#toc_1" title="Tentang '+name+' Slot Online Gacor">Tentang '+name+' Slot Online Gacor</a></li>'
+                +'<li><a href="#" title="Rahasia Kemenangan dan Keseruan Bermain Slot Online Gacor Hari Ini">Rahasia Kemenangan dan Keseruan Bermain Slot Online Gacor Hari Ini</a>'
+                    +'<ol><li><a href="#toc_2-1" title="Kualitas Slot Online Gacor '+name+'">Kualitas Slot Online Gacor '+name+'</a></li>'
+                    +'<li><a href="#toc_2-2" title="Strategi Bermain Slot Online Gacor">Strategi Bermain Slot Online Gacor</a></li></ol></li>'  
+                +'<li><a href="#toc_3" title="Testimoni Pemain">Testimoni Pemain</a>'
+                    +'<ol><li><a href="#toc_3-1" title="Keseruan Bermain di '+name+' Slot Online Gacor">Keseruan Bermain di '+name+' Slot Online Gacor</a></li></ol></li>'
+                +'<li><a href="#toc_4" title="Tujuan Utama Penggemar Judi Online">Tujuan Utama Penggemar Judi Online</a></li>'
+                    //+'<li><a href="#" title=""></a></li></ol></li>'
                 //+'<li><a href="#" title=""></a>'
-                    //+'<ol><li><a href="#" title=""></a></li></ol></li>'
+                    //+'<ol><li><a href="#" title=""></a></li>'
+                    //+'<li><a href="#" title=""></a></li></ol></li>'
                 +'</ol>'
                 +'</nav></div></header>'
                 //SECTION INFO
@@ -792,9 +787,9 @@ function previewCode(){
 				+'<section aria-labelledby="toc_2">'
                 +'<h2 id="toc_2">Rahasia Kemenangan dan Keseruan Bermain Slot Online Gacor Hari Ini</h2>'
                 +'<p>Slot online '+name+' telah menjadi salah satu permainan kasino paling populer di era digital. '+name+', sebagai salah satu platform perjudian online terkemuka, telah mendapatkan reputasi sebagai penyedia Slot Online Gacor Hari Ini. Kami akan mengungkap rahasia di balik kesuksesan '+name+' Slot Online Gacor dan mengapa pemain begitu tertarik untuk bermain di sana.</p>'
-                 +'<h3>Kualitas Slot Online Gacor '+name+': Mengapa Begitu Diminati?</h3>'
+                 +'<h3 id="toc_2-1">Kualitas Slot Online Gacor '+name+': Mengapa Begitu Diminati?</h3>'
                  +'<p>'+name+' telah mendapatkan reputasi untuk menyediakan Slot Online Gacor, yang secara konsisten memberikan pengalaman bermain yang mengasyikkan dan kemenangan yang sering. Faktor-faktor yang membuat '+name+' diminati termasuk variasi tema yang menarik, fitur-fitur bonus yang menggiurkan, animasi kualitas tinggi, dan peluang kemenangan yang baik.</p>'
-                +'<h3>Strategi Bermain Slot Online Gacor</h3>'
+                +'<h3 id="toc_2-2">Strategi Bermain Slot Online Gacor</h3>'
                 +'<p>Tidak hanya faktor keberuntungan, strategi bermain juga menjadi kunci dalam meraih kesuksesan di '+name+' Slot Online Gacor. Beberapa strategi yang dapat diterapkan adalah:</p>'
                 +'<ol><li><p><strong>Pahami Paylines dan Taruhan '+name+'</strong>: Pastikan Anda memahami cara kerja paylines dan bagaimana taruhan memengaruhi peluang kemenangan '+name+'. Menyesuaikan taruhan dengan anggaran Anda adalah penting.</p></li>'
                 +'<li><p><strong>Manfaatkan Fitur Bonus '+name+'</strong>: Slot Online Gacor sering kali memiliki berbagai fitur bonus seperti putaran gratis, simbol liar, dan permainan bonus '+name+'. Manfaatkan fitur-fitur ini untuk meningkatkan peluang kemenangan.</p></li>'
@@ -805,16 +800,14 @@ function previewCode(){
 				+'<section aria-labelledby="toc_3">'
                 +'<h2 id="toc_3">Testimoni Pemain: Pengalaman Nyata di '+name+' Slot Online Gacor</h2>'
                 +'<p>Banyak pemain telah memberikan testimoni positif tentang pengalaman mereka bermain di '+name+' Slot Online Gacor. Mereka mengapresiasi variasi permainan, peluang kemenangan yang baik, dan layanan pelanggan '+name+' yang responsif. Testimoni ini memberikan bukti nyata tentang betapa menariknya pengalaman bermain di platform '+name+'.</p>'  
-                +'<h3>Keseruan Bermain di '+name+' Slot Online Gacor</h3>'
+                +'<h3 id="toc_3-1">Keseruan Bermain di '+name+' Slot Online Gacor</h3>'
                 +'<p>Tidak hanya menawarkan kesempatan untuk meraih kemenangan, '+name+' Slot Online Gacor juga memberikan keseruan yang tak tertandingi. Berbagai tema permainan, grafis yang memukau, dan interaksi sosial melalui fitur chat membuat pengalaman bermain '+name+' menjadi lebih hidup dan menghibur.</p>'
                 //+'<div class="back_toc" on="tap:toc.scrollTo(\'position\' = \'center\')" role="button" tabindex="0">Kembali ↑</div>'  
                 +'</section>'
                 //SECTION 
 				+'<section aria-labelledby="toc_4">'
-                +'<h2 id="toc_4">Kesimpulan</h2>'
+                +'<h2 id="toc_4">Tujuan Utama Penggemar Judi Online</h2>'
                 +'<p>'+name+' Slot Online Gacor telah membuktikan dirinya sebagai salah satu tujuan utama bagi para penggemar perjudian online. Dengan menawarkan variasi permainan yang menarik, fitur-fitur unggulan, dan peluang kemenangan yang baik, platform '+name+' telah mendapatkan tempat di hati pemain judi. Dengan menerapkan strategi bermain yang tepat, pemain dapat merasakan sensasi kesuksesan dan keseruan dalam setiap putaran di '+name+' Slot Online Gacor.</p>'  
-                +'<h3></h3>'
-                +'<p></p>'
                 //+'<div class="back_toc" on="tap:toc.scrollTo(\'position\' = \'center\')" role="button" tabindex="0">Kembali ↑</div>'  
                 +'</section>'
 				+'<footer>'
