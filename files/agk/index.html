@@ -323,8 +323,8 @@ iframe {
     #toc li,.back_toc{cursor:pointer}
     :target::before{content:"";display:block;height:48px;visibility:hidden}
 
-    ol { counter-reset: item }
-    li:before { content: counters(item, ".") " "; counter-increment: item }
+    #toc ol { counter-reset: item }
+    #toc ol li:before { content: counters(item, ".") " "; counter-increment: item }
 
     article footer p.lastmod {
         color: #bbb;
